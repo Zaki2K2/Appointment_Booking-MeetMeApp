@@ -1,0 +1,96 @@
+﻿@page
+@model MeetMeApp.Web.Pages.LetsMeet.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].TimeStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].TimeEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Confirmation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Deleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Feedback)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Attachment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].EntryRecord)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Information) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Confirmation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feedback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attachment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntryRecord)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Info_id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Info_id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Info_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

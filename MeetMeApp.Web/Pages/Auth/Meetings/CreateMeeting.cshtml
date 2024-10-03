@@ -1,0 +1,53 @@
+﻿@page
+@model MeetMeApp.Web.Pages.Admin.Meetings.CreateMeetingModel
+
+@{
+    ViewData["Title"] = "Create Meeting";
+}
+
+<h1>Create Meeting</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Meeting.Title" required>*Title:</label>
+        <input asp-for="Meeting.Title" class="form-control" required />
+        <span asp-validation-for="Meeting.Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Meeting.Date" required>*Appointment On:</label>
+        <input asp-for="Meeting.Date" class="form-control" type="date" required />
+        <span asp-validation-for="Meeting.Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Meeting.TimeStart" required>*From:</label>
+        <input asp-for="Meeting.TimeStart" class="form-control" type="time" required />
+        <span asp-validation-for="Meeting.TimeStart" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Meeting.TimeEnd" required>*To:</label>
+        <input asp-for="Meeting.TimeEnd" class="form-control" type="time" required />
+        <span asp-validation-for="Meeting.TimeEnd" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Meeting.ContactNo">Contact #:</label>
+        <input asp-for="Meeting.ContactNo" class="form-control" />
+        <span asp-validation-for="Meeting.ContactNo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Meeting.Email">Email:</label>
+        <input asp-for="Meeting.Email" class="form-control" />
+        <span asp-validation-for="Meeting.Email" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Create Meeting"/>
+    <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Page("/Index")'">Cancel</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

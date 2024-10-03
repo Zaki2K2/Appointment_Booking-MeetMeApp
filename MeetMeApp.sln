@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetMeApp.Web", "MeetMeApp.Web\MeetMeApp.Web.csproj", "{73E24B7E-5E97-4A6C-A493-B9402C02570F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetMeApp.Web", "MeetMeApp.Web\MeetMeApp.Web.csproj", "{73E24B7E-5E97-4A6C-A493-B9402C02570F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

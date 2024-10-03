@@ -1,0 +1,35 @@
+﻿@page
+@model MeetMeApp.Web.Pages.Admin.Meetings.MeetingListModel
+
+@{
+    ViewData["Title"] = "Meeting List";
+}
+
+<h1>Meeting List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Time Start</th>
+            <th>Time End</th>
+            <th>User</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model.Appointments)
+        {
+            <tr>
+                <td>@appointment.TimeStart.ToString("hh:mm tt")</td>
+                <td>@appointment.TimeEnd.ToString("hh:mm tt")</td>
+                <td>@appointment.Email</td> <!-- Assuming Email represents the user -->
+                <td>@appointment.Title</td>
+                <td>
+                    <a asp-page="./EditAppointment" asp-route-id="@appointment.Info_id">Edit</a> |
+                    <a asp-page="./DeleteAppointment" asp-route-id="@appointment.Info_id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

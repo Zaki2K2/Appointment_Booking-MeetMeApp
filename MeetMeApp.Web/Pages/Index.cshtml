@@ -3,6 +3,21 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<div>
+    <div>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='@Url.Page("/Auth/CreateMeeting")'">
+            Go To Book Meeting
+        </button>
+    </div>
+<br />
+    <div>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='@Url.Page("/Auth/Meetings/MeetingList")'">
+              Go To List of Meetings
+        </button>
+    </div>
+
+
+</div>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
